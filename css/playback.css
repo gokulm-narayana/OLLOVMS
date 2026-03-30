@@ -1,0 +1,285 @@
+/* Playback Interface Styles */
+
+.playback-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Video Area */
+.playback-video-area {
+    flex: 1;
+    position: relative;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.playback-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Playback Overlay (Status) */
+.playback-overlay-info {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    pointer-events: none;
+}
+
+.playback-badge {
+    background: rgba(33, 150, 243, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
+}
+
+.playback-timestamp {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+/* Controls Area (Bottom) */
+.playback-controls-area {
+    height: 140px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+/* Timeline */
+.timeline-container {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    background: #1e1e1e;
+    overflow: hidden;
+}
+
+.timeline-track {
+    height: 100%;
+    position: relative;
+    /* Simulate a 24h timeline width, controllable via JS zoom */
+    width: 100%;
+}
+
+/* Time Markers */
+.time-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.time-marker span {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Events on Timeline */
+.timeline-event {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    background: var(--accent-color);
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+.timeline-event.motion {
+    background: var(--warning-color);
+    /* Yellow for motion */
+}
+
+.timeline-event.person {
+    background: var(--danger-color);
+    /* Red for person */
+}
+
+/* Scrubber / Current Time */
+.timeline-scrubber {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* Centered approach */
+    width: 2px;
+    background: #fff;
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.scrubber-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Control Buttons Bar */
+.playback-buttons {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+}
+
+.playback-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pb-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pb-btn:hover {
+    background: var(--bg-hover);
+    color: var(--accent-color);
+}
+
+.pb-btn.active {
+    background: rgba(33, 150, 243, 0.1);
+    color: var(--accent-color);
+    border-color: rgba(33, 150, 243, 0.2);
+}
+
+.pb-btn.play-large {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+}
+
+.pb-btn.play-large:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* Calendar Date Picker Styles */
+.date-picker-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--bg-hover);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.date-picker-btn:hover {
+    border-color: var(--accent-color);
+}
+
+/* Date Dropdown Styles */
+.date-dropdown-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 180px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    margin-bottom: 8px;
+    overflow: hidden;
+    animation: fadeIn 0.1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.date-dropdown-header {
+    padding: 8px 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-hover);
+    font-weight: 600;
+}
+
+.date-dropdown-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.date-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.date-dropdown-item:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.date-dropdown-item.active {
+    background: rgba(33, 150, 243, 0.15);
+    color: var(--accent-color);
+    font-weight: 500;
+}

@@ -1,0 +1,250 @@
+/* Camera Issue Details Page - SRS Styles */
+
+/* Scoped Theme for Issue Details Page */
+.issue-details-page {
+    /* Severity Colors (Universal) */
+    --offline-color: #ef4444;
+    /* Red-500 */
+    --offline-bg: rgba(239, 68, 68, 0.1);
+    --warning-color: #f59e0b;
+    /* Amber-500 */
+    --warning-bg: rgba(245, 158, 11, 0.1);
+}
+
+.issue-details-page {
+    /* Fits within app-main grid */
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding handles by app-main or here? app-main has padding. Double padding? */
+    /* app-main has padding: var(--spacing-lg). issue-details-page has padding: 24px. */
+    /* Let's reset padding here if app-main provides it, or keep it if we want extra. */
+    /* Usually full page views might not want double padding. Let's make it fit 100% and manage its own inner spacing or use app-main's. */
+    /* If I keep padding here, it adds to app-main padding. */
+    /* Let's set padding: 0 here and let the grid gap/internal cards handle it, or just use app-main's padding. */
+
+    /* However, the design likely expects full width cards. */
+    /* Let's keep display flex and size. */
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Internal scroll if needed */
+}
+
+/* Header Section */
+.issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.issue-title-group h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.issue-camera-location {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Status Badges */
+.issue-status-badge {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Theme: Offline */
+.status-offline .issue-status-badge {
+    background-color: var(--offline-bg);
+    color: var(--offline-color);
+    border: 1px solid var(--offline-color);
+}
+
+.status-offline .card-icon {
+    color: var(--offline-color);
+}
+
+/* Theme: Warning */
+.status-warning .issue-status-badge {
+    background-color: var(--warning-bg);
+    color: var(--warning-color);
+    border: 1px solid var(--warning-color);
+}
+
+.status-warning .card-icon {
+    color: var(--warning-color);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* Content Grid */
+.issue-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Preview takes more space */
+    gap: 24px;
+    height: 100%;
+}
+
+/* Preview Section */
+.issue-preview-section {
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+}
+
+.offline-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-secondary);
+    gap: 16px;
+}
+
+.live-sim {
+    background: #111;
+}
+
+.live-overlay {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Details Panel */
+.issue-details-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.details-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Health Bar */
+.health-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--bg-hover);
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.health-bar-fill {
+    height: 100%;
+    background-color: var(--warning-color);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* Action Buttons */
+.action-buttons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.action-btn:hover:not(:disabled) {
+    background-color: var(--bg-hover);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-btn.primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}

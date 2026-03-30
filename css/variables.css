@@ -1,0 +1,83 @@
+:root {
+    /* Color Palette - Light Theme VMS */
+    --bg-app: #F5F7FA;
+    /* Light gray background for the app */
+    --bg-sidebar: #FFFFFF;
+    /* White sidebar */
+    --bg-header: #FFFFFF;
+    /* White header */
+    --bg-card: #FFFFFF;
+    /* White cards */
+    --bg-hover: #F0F2F5;
+    /* Light hover state */
+    --bg-active: #E3F2FD;
+    /* Light blue active state */
+    --bg-secondary: #FFFFFF; 
+    /* Secondary background for inputs/buttons */
+
+    --text-primary: #1A1A1A;
+    /* Near black for primary text */
+    --text-secondary: #5F6368;
+    /* Dark gray for secondary text */
+    --text-muted: #9AA0A6;
+    /* Muted text */
+    --text-on-accent: #FFFFFF;
+
+    --border-color: #E0E0E0;
+    /* Light border */
+
+    --accent-color: #0056D2;
+    /* Primary Blue (Accessible) */
+    --accent-hover: #0044A5;
+    --danger-color: #D32F2F;
+    --success-color: #388E3C;
+    --warning-color: #FBC02D;
+
+    /* Spacing */
+    --header-height: 60px;
+    --sidebar-width: 250px;
+    --sidebar-width-collapsed: 64px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Typography */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+
+    --transition-speed: 0.2s;
+    --transition-ease: ease-in-out;
+}
+
+/* Dark Theme Palette */
+body.dark-theme {
+    --bg-app: #121212;
+    --bg-sidebar: #1E1E1E;
+    --bg-header: #1E1E1E;
+    --bg-card: #2C2C2C;
+    --bg-hover: #383838;
+    --bg-active: #404040;
+    --bg-secondary: #2C2C2C;
+    /* Added for Alerts/Tables */
+    --bg-primary: #121212;
+    /* Added for Inputs */
+
+    --text-primary: #E0E0E0;
+    --text-secondary: #B0B0B0;
+    --text-muted: #757575;
+
+    --border-color: #424242;
+
+    --accent-color: #64B5F6;
+    /* Lighter Blue for Dark Mode */
+    --accent-hover: #42A5F5;
+
+    --danger-color: #EF5350;
+    --success-color: #66BB6A;
+    --warning-color: #FFCA28;
+}

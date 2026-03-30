@@ -1,0 +1,381 @@
+/* Cameras Page Styling */
+
+.cameras-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--spacing-lg);
+}
+
+/* Filter Bar */
+.filters-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-container {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: var(--font-size-md);
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--accent-color);
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.filter-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: white;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+}
+
+.btn-clear-filters {
+    padding: 8px 16px;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+}
+
+.btn-clear-filters:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.btn-add-camera {
+    margin-left: auto;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add-camera:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Table */
+.table-container {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensure it fills the view */
+}
+
+.table-content-scroll {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.cameras-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cameras-table th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Ensure header stays on top */
+}
+
+/* Ensure header background covers full width including scrollbar adjustments if any */
+.cameras-table thead {
+    background: var(--bg-hover);
+}
+
+.cameras-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.cameras-table tr:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.online {
+    background-color: rgba(56, 142, 60, 0.1);
+    color: var(--success-color);
+}
+
+.status-badge.offline {
+    background-color: rgba(211, 47, 47, 0.1);
+    color: var(--danger-color);
+}
+
+.status-badge.warning {
+    background-color: rgba(251, 192, 45, 0.1);
+    color: #F57F17;
+    /* Darker yellow for text */
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* Actions Menu */
+.action-btn {
+    padding: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+/* Pagination */
+.pagination-bar {
+    padding: 12px 16px;
+    padding-right: 100px;
+    /* Prevent overlap with floating chatbot icon */
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.page-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-btn:not(:disabled):hover {
+    background: var(--bg-hover);
+}
+
+/* Action Menu Popup */
+.action-popup {
+    position: absolute;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 6px 0;
+    width: 180px;
+    z-index: 1000;
+    display: none;
+    /* Hidden by default */
+}
+
+.action-popup.show {
+    display: block;
+}
+
+.action-popup.open-up {
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--border-color);
+    /* Improve definition */
+}
+
+.action-item {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.action-item svg {
+    color: var(--text-secondary);
+}
+
+.action-item.delete {
+    color: var(--danger-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 4px;
+    padding-top: 10px;
+}
+
+.action-item.delete svg {
+    color: var(--danger-color);
+}
+
+
+.action-item.delete:hover {
+    background-color: rgba(211, 47, 47, 0.05);
+}
+
+/* Camera Settings Page */
+/* Camera View Tabs (Sleek Segmented Control) */
+.camera-view-tab {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    /* Pill shape */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+}
+
+.camera-view-tab:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.camera-view-tab.active {
+    background: rgba(33, 150, 243, 0.1);
+    /* Subtle blue tint */
+    color: var(--accent-color);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    font-weight: 600;
+}
+
+.camera-view-tab svg {
+    color: currentColor;
+    /* Inherit color from parent */
+    opacity: 0.8;
+}
+
+.camera-view-tab.active svg {
+    opacity: 1;
+}
+
+.camera-view-tab span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.camera-view-tab.danger {
+    color: var(--text-muted);
+}
+
+.camera-view-tab.danger:hover {
+    background: rgba(211, 47, 47, 0.05);
+    color: var(--danger-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Device Scanner Styles */
+.scanning-loader {
+    animation: spin 1.5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.device-item:hover {
+    background-color: var(--bg-hover) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.progress-bar-container {
+    background: var(--bg-hover);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
