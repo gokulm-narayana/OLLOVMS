@@ -42,7 +42,7 @@ def init_shuka():
         print(f"CRITICAL: Failed to load Shuka v1 Model: {e}")
 
 
-# --- Database Functions ---   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 hf token
+# --- Database Functions ---   
 def init_db():
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
